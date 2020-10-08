@@ -20,19 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6773bd90-1b89-4ec1-8ff0-ddb5093d73b5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/connection.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/contact_controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/entry_controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/home_controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/post_controller.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/routes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/contact/contact.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/entry/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/entry/register.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/home/home.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/layout.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/post/post.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,7 +63,7 @@
       <updated>1601992982253</updated>
       <workItem from="1601992984163" duration="470000" />
       <workItem from="1602050196974" duration="13525000" />
-      <workItem from="1602142730689" duration="2732000" />
+      <workItem from="1602142730689" duration="4518000" />
     </task>
     <servers />
   </component>
@@ -111,10 +99,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="600" height="428" key="javadoc.popup/0.0.1536.824@0.0.1536.824" timestamp="1602053092506" />
-    <state x="425" y="189" key="run.anything.popup" timestamp="1602050513287">
+    <state x="425" y="189" key="run.anything.popup" timestamp="1602151065977">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="425" y="189" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1602050513287" />
+    <state x="425" y="189" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1602151065977" />
     <state x="405" y="145" key="search.everywhere.popup" timestamp="1602053381591">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
