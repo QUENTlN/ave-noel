@@ -1,0 +1,16 @@
+{
+    "name": "quentin/ave-noel",
+    "authors": [
+        {
+            "name": "Quentin Vaillant",
+            "email": "quentin095.vaillant@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/",
+            "Core\\": "core/"
+        }
+    },
+    "require": {}
+}

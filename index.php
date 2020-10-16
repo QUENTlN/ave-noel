@@ -1,15 +1,20 @@
 <?php
-require_once('connection.php');
+
+require_once "vendor/autoload.php";
+
 
 if (isset($_GET['controller'])) {
     $controller = $_GET['controller'];
     if (isset($_GET['action'])) {
         $action = $_GET['action'];
     } else {
-        $action = "show";
+        $action = 'show';
     }
 } else {
     $controller = 'home';
+    $action = 'show';
 }
 
-require_once('views/layout.php');
+$router = new Core\Router($controller,$action);
+$router->call();
+
