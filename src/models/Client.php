@@ -5,13 +5,14 @@ namespace App\models;
 class Client
 {
     private $id;
+    private $username;
     private $name;
     private $lastname;
-    private $email;
+    private $mail;
     private $password;
     private $avatarPath;
     private $isAdmin;
-    private $lastConnection;
+    private $lastConnectionAt;
 
     /**
      * @return mixed
@@ -28,6 +29,24 @@ class Client
     public function setId($id)
     {
         $this->id = $id;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUsername()
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param mixed $username
+     * @return Client
+     */
+    public function setUsername($username)
+    {
+        $this->username = $username;
         return $this;
     }
 
@@ -70,18 +89,18 @@ class Client
     /**
      * @return mixed
      */
-    public function getEmail()
+    public function getMail()
     {
-        return $this->email;
+        return $this->mail;
     }
 
     /**
-     * @param mixed $email
+     * @param mixed $mail
      * @return Client
      */
-    public function setEmail($email)
+    public function setMail($mail)
     {
-        $this->email = $email;
+        $this->mail = $mail;
         return $this;
     }
 
@@ -142,18 +161,18 @@ class Client
     /**
      * @return mixed
      */
-    public function getLastConnection()
+    public function getLastConnectionAt()
     {
-        return $this->lastConnection;
+        return $this->lastConnectionAt;
     }
 
     /**
-     * @param mixed $lastConnection
+     * @param mixed $lastConnectionAt
      * @return Client
      */
-    public function setLastConnection($lastConnection)
+    public function setLastConnectionAt($lastConnectionAt)
     {
-        $this->lastConnection = $lastConnection;
+        $this->lastConnectionAt = $lastConnectionAt;
         return $this;
     }
 

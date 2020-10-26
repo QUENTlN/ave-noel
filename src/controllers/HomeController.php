@@ -3,6 +3,7 @@
 
 namespace App\controllers;
 
+use App\repository\ClientRepository;
 use App\repository\PostRepository;
 
 class HomeController

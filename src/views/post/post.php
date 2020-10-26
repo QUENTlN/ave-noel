@@ -6,8 +6,9 @@
                 <div class="col-md-10 col-lg-8 mx-auto">
                     <div class="post-heading">
                         <h1><?= $post->getTitle() ?><br></h1>
-                        <h2 class="subheading"><?= $post->getSubject() ?><br></h2><span class="meta"> Posté par <a
-                                    href="#"><?= $post->getUsername() ?></a>&nbsp;le <?= $post->getCreatedAt() ?> <?php if ($post->getUpdatedAt() != null) {
+                        <h2 class="subheading"><?= $post->getSubject() ?><br></h2>
+                        <span class="meta"> Posté par <a
+                                    href="index.php?controller=client&action=posts&idClient=<?= $post->getIdClient() ?>"><?= $post->getUsername() ?></a>&nbsp;le <?= $post->getCreatedAt() ?> <?php if ($post->getUpdatedAt() != null) {
                                 echo("(modifier le " . $post->getUpdatedAt() . ")");
                             } ?></span></div>
                 </div>
@@ -177,13 +178,16 @@
                                                         </button>
                                                     </div>
                                                     <div class="modal-footer">
-                                                        <form action="index.php?controller=comment&action=delete" method="post">
+                                                        <form action="index.php?controller=comment&action=delete"
+                                                              method="post">
                                                             <button class="btn btn-light" type="button"
                                                                     data-dismiss="modal">
                                                                 non
                                                             </button>
-                                                            <input name="idComment" type="hidden" value="<?= $comment->getId() ?>" readonly>
-                                                            <input name="idPost" type="hidden" value="<?= $post->getId() ?>" readonly>
+                                                            <input name="idComment" type="hidden"
+                                                                   value="<?= $comment->getId() ?>" readonly>
+                                                            <input name="idPost" type="hidden"
+                                                                   value="<?= $post->getId() ?>" readonly>
                                                             <button class="btn btn-primary" type="submit">oui</button>
                                                         </form>
                                                     </div>

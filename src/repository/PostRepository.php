@@ -15,7 +15,7 @@ class PostRepository
         $result = $connection->prepare('SELECT * FROM post WHERE deleted_at IS NULL');
         $result->execute();
         $posts = [];
-        foreach ($result->fetchAll() as $line){
+        foreach ($result->fetchAll() as $line) {
             $post = new Post();
 
             $post->setId($line['id']);
@@ -27,7 +27,7 @@ class PostRepository
             $post->setUpdatedAt($line['updated_at']);
             $post->setDeletedAt($line['deleted_at']);
             $client = $connection->prepare('SELECT username FROM client WHERE id = :idClient');
-            $client->bindValue(':idClient',$post->getIdClient(),\PDO::PARAM_INT);
+            $client->bindValue(':idClient', $post->getIdClient(), \PDO::PARAM_INT);
             $client->execute();
             $post->setUsername($client->fetchColumn());
 
@@ -36,7 +36,38 @@ class PostRepository
         return $posts;
     }
 
-    public static function create($post){
+    public static function getPostsOfClient($idClient)
+    {
+        $database = new Db();
+        $connection = $database->checkConnection();
+
+        $result = $connection->prepare('SELECT * FROM post WHERE deleted_at IS NULL AND id_client = :idClient');
+        $result->bindValue(':idClient', $idClient, \PDO::PARAM_INT);
+        $result->execute();
+        $posts = [];
+        foreach ($result->fetchAll() as $line) {
+            $post = new Post();
+
+            $post->setId($line['id']);
+            $post->setIdClient($line['id_client']);
+            $post->setContent(preg_replace('/(.{1,300}).*/i', '${1}...', $line['content']));
+            $post->setTitle($line['title']);
+            $post->setSubject($line['subject']);
+            $post->setCreatedAt($line['created_at']);
+            $post->setUpdatedAt($line['updated_at']);
+            $post->setDeletedAt($line['deleted_at']);
+            $client = $connection->prepare('SELECT username FROM client WHERE id = :idClient');
+            $client->bindValue(':idClient', $post->getIdClient(), \PDO::PARAM_INT);
+            $client->execute();
+            $post->setUsername($client->fetchColumn());
+
+            $posts[] = $post;
+        }
+        return $posts;
+    }
+
+    public static function create($post)
+    {
 
         $database = new Db();
         $connection = $database->checkConnection();
@@ -45,7 +76,7 @@ class PostRepository
         $result->bindValue(':content', $post->getContent(), \PDO::PARAM_STR);
         $result->bindValue(':title', $post->getTitle(), \PDO::PARAM_STR);
         $result->bindValue(':subject', $post->getSubject(), \PDO::PARAM_STR);
-        $result->bindValue(':createdAt', $post->getCreatedAt(),\PDO::PARAM_STR);
+        $result->bindValue(':createdAt', $post->getCreatedAt(), \PDO::PARAM_STR);
         $result->execute();
     }
 
@@ -60,7 +91,7 @@ class PostRepository
         $result->execute();
         $postDb = $result->fetch();
 
-        if ($postDb){
+        if ($postDb) {
             $post = new Post();
             $post->setId($postDb['id']);
             $post->setIdClient($postDb['id_client']);
@@ -89,7 +120,7 @@ class PostRepository
         $result->bindValue(':content', $post->getContent(), \PDO::PARAM_STR);
         $result->bindValue(':title', $post->getTitle(), \PDO::PARAM_STR);
         $result->bindValue(':subject', $post->getSubject(), \PDO::PARAM_STR);
-        $result->bindValue(':updatedAt', $post->getUpdatedAt(),\PDO::PARAM_STR);
+        $result->bindValue(':updatedAt', $post->getUpdatedAt(), \PDO::PARAM_STR);
         $result->execute();
     }
 

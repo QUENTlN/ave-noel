@@ -10,7 +10,7 @@ class Router
         'home' => ['show'],
         'entry' => ['login', 'register'],
         'contact' => ['show'],
-        'post' => ['show', 'create', 'update', 'delete'],
+        'post' => ['show', 'create', 'update', 'delete', 'user'],
         'comment' => ['create', 'update', 'delete'],
         'client' => ['show', 'create', 'update', 'delete']
     );

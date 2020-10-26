@@ -59,7 +59,7 @@
                         <h2 class='post-title col'><strong>" . $post->getTitle() . "</strong></h2>
                     </div>
                     <h3 class='post-subtitle' style='color: #212529;'>" . $post->getContent() . "<br></h3>
-                    <p class='post-meta'>Posté par&nbsp;<a href=''#'>" . $post->getUsername() . "</a>, le " . $post->getCreatedAt() . ".
+                    <p class='post-meta'>Posté par&nbsp;<a href='index.php?controller=client&action=posts&idClient=" . $post->getIdClient() . "'>" . $post->getUsername() . "</a>, le " . $post->getCreatedAt() . ".
                     </p>
                 </a>
             </div>

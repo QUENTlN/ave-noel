@@ -26,56 +26,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6773bd90-1b89-4ec1-8ff0-ddb5093d73b5" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/ClientController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/CommentController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repository/CommentRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/repository/PostRepository.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/views/layout/template.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/views/client/posts.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/bootstrap/css/bootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/bootstrap/js/bootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/css/Login-Form-Dark.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/css/Login-Form-Dark.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/FontAwesome.otf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/FontAwesome.otf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/font-awesome.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/font-awesome.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/fontawesome-webfont.woff2" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/ionicons.eot" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/ionicons.eot" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/ionicons.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/ionicons.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/ionicons.svg" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/ionicons.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/ionicons.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/ionicons.ttf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/fonts/ionicons.woff" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/fonts/ionicons.woff" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/avatar-homme.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/user-icon/default-avatar.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/daniel-olah-0VQPsAT3aog-unsplash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/image1.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/daniel-olah-VS_kFx4yF5g-unsplash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/image3.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/daniel-olah-WTryhvndNZc-unsplash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/image4.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/daniel-olah-pCcGpVsOHoo-unsplash.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/image2.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/star-sky.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/img/téléchargement.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/public/images/notification.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/clean-blog.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/clean-blog.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/jquery.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/jquery.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/Router.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/Router.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/Db.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/Db.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ContactController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ContactController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/EntryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/EntryController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ClientController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/HomeController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/PostController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/PostController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Comment.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Comment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Post.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/repository/ClientRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/ClientRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/contact/contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/contact/contact.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/entry/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/entry/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/entry/register.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/entry/register.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repository/PostRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/repository/PostRepository.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/home/home.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/home/home.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/footer.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/layout/navbar.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/views/post/post.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/post/post.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -110,11 +69,11 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\wamp64\www\ave-noel\src\views\client" />
       <recent name="C:\wamp64\www\ave-noel\public\images\user-icon" />
       <recent name="C:\wamp64\www\ave-noel\public" />
       <recent name="C:\wamp64\www\ave-noel\public\images" />
       <recent name="C:\wamp64\www\ave-noel" />
-      <recent name="C:\wamp64\www\ave-noel\core" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -138,6 +97,7 @@
       <workItem from="1603098802630" duration="17046000" />
       <workItem from="1603533422788" duration="1061000" />
       <workItem from="1603656042622" duration="1645000" />
+      <workItem from="1603732215460" duration="9018000" />
     </task>
     <servers />
   </component>
@@ -177,14 +137,18 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="500" y="240" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1602510508417" />
-    <state x="562" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1603041922658">
+    <state x="562" y="121" key="#com.intellij.ide.util.MemberChooser" timestamp="1603741267073">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="562" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1603041922658" />
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603119872770">
+    <state x="562" y="121" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1603741267073" />
+    <state x="510" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1603741411809">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603119872770" />
+    <state x="510" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.824@0.0.1536.824" timestamp="1603741411809" />
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1603739825768">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="499" y="167" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1536.824@0.0.1536.824" timestamp="1603739825768" />
     <state x="428" y="308" key="FileChooserDialogImpl" timestamp="1602166894965">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
