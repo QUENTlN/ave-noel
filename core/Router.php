@@ -3,8 +3,6 @@
 
 namespace Core;
 
-use App\controllers;
-
 
 class Router
 {
@@ -12,15 +10,29 @@ class Router
         'home' => ['show'],
         'entry' => ['login', 'register'],
         'contact' => ['show'],
-        'post' => ['show']
+        'post' => ['show', 'create', 'update', 'delete'],
+        'comment' => ['create', 'update', 'delete'],
+        'client' => ['show', 'create', 'update', 'delete']
     );
 
     private $controller;
     private $action;
 
 
-    function __construct($controller, $action)
+    function __construct()
     {
+        if (isset($_GET['controller'])) {
+            $controller = $_GET['controller'];
+            if (isset($_GET['action'])) {
+                $action = $_GET['action'];
+            } else {
+                $action = 'show';
+            }
+        } else {
+            $controller = 'home';
+            $action = 'show';
+        }
+
         if (array_key_exists($controller, self::CONTROLLERS)) {
             $this->controller = $controller;
             if (in_array($action, self::CONTROLLERS[$controller])) {
@@ -47,9 +59,13 @@ class Router
                 $controller = new \App\controllers\ContactController();
                 break;
             case 'post':
-                // we need the model to query the database later in the controller
-                //require_once('models/post.php');
                 $controller = new \App\controllers\PostController();
+                break;
+            case 'comment':
+                $controller = new \App\controllers\CommentController();
+                break;
+            case 'client':
+                $controller = new \App\controllers\ClientController();
                 break;
         }
 

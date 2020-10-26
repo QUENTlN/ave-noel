@@ -8,11 +8,11 @@ class EntryController
 {
     public function login()
     {
-        require_once('src/views/entry/login.php');
+        require_once('../src/views/entry/login.php');
     }
 
     public function register()
     {
-        require_once('src/views/entry/register.php');
+        require_once('../src/views/entry/register.php');
     }
 }

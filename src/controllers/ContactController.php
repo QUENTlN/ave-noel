@@ -9,6 +9,6 @@ class ContactController
 {
     public function show()
     {
-        require_once('src/views/contact/contact.php');
+        require_once('../src/views/contact/contact.php');
     }
 }

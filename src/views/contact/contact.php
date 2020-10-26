@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Ave Noel - Blog</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic">
-    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/ionicons.min.css">
-    <link rel="stylesheet" href="assets/css/Login-Form-Dark.css">
-</head>
-
-<body>
-
-<?php require_once('src/views/layout/navbar.php'); ?>
-
-<header class="masthead" style="background: url('assets/img/daniel-olah-pCcGpVsOHoo-unsplash.jpg')">
+<?php ob_start(); ?>
+<header class="masthead" style="background: url(&quot;images/image2.jpg&quot;)">
     <div class="overlay"></div>
     <div class="container">
         <div class="row">
@@ -70,12 +51,7 @@
     </div>
 </div>
 <hr>
-
-<?php require_once('src/views/layout/footer.php'); ?>
-
-<script src="assets/js/jquery.min.js"></script>
-<script src="assets/bootstrap/js/bootstrap.min.js"></script>
-<script src="assets/js/clean-blog.js"></script>
-</body>
-
-</html>
+<?php
+$pageContent = ob_get_clean();
+include_once "../src/views/layout/template.php";
+?>
