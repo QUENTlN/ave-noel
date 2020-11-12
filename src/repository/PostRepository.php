@@ -68,7 +68,6 @@ class PostRepository
 
     public static function create($post)
     {
-
         $database = new Db();
         $connection = $database->checkConnection();
         $result = $connection->prepare('INSERT INTO post(id, id_client, content, title, subject, created_at, updated_at, deleted_at) VALUES (null, :idClient,:content,:title,:subject,:createdAt,null,null)');
@@ -108,7 +107,6 @@ class PostRepository
 
             return $post;
         }
-        header('Location: index.php');
     }
 
     public static function update($post)
@@ -132,5 +130,20 @@ class PostRepository
         $result->bindValue(':id', $post->getId(), \PDO::PARAM_INT);
         $result->bindValue(':deletedAt', $post->getDeletedAt(), \PDO::PARAM_STR);
         $result->execute();
+    }
+
+    public static function isTheAuthor($idClient, $idPost)
+    {
+        $database = new Db();
+        $connection = $database->checkConnection();
+
+        $result = $connection->prepare('SELECT COUNT(*) FROM post WHERE id = :idPost AND id_client = :idClient');
+        $result->bindValue(':idPost', $idPost, \PDO::PARAM_INT);
+        $result->bindValue(':idClient', $idClient, \PDO::PARAM_INT);
+        $result->execute();
+        if ($result->fetchColumn() == 1) {
+            return true;
+        }
+        return false;
     }
 }

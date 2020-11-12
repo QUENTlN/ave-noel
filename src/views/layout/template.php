@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -26,25 +25,30 @@
             <ul class="nav navbar-nav ml-auto">
                 <li class="nav-item"><a class="nav-link" href="index.php?controller=home">ACCUEIL</a></li>
                 <li class="nav-item"><a class="nav-link" href="index.php?controller=contact">Contact</a></li>
-                <li class="nav-item"><a class="nav-link" href="index.php?controller=entry&action=login"
-                                        style="padding: 5px;">
-                        <button class="btn btn-primary" type="button"
-                                style="height: 30px;font-size: 12px;padding: 5px 10px;">se connecter
+                <?php
+                if (!isset($_SESSION["session_validity"]) || $_SESSION["session_validity"] == false) {
+                    echo "<li class='nav-item'><a class='nav-link' href='index.php?controller=entry&action=login'
+                                        style='padding: 5px;'>
+                        <button class='btn btn-primary' type='button'
+                                style='height: 30px;font-size: 12px;padding: 5px 10px;'>se connecter
                         </button>
-                    </a></li>
-                <li class="nav-item dropdown" style="padding: 0px 10px;"><a class="dropdown-toggle nav-link"
+                    </a></li>";
+                } else {
+                    echo '<li class="nav-item dropdown" style="padding: 0px 10px;"><a class="dropdown-toggle nav-link"
                                                                             data-toggle="dropdown" aria-expanded="false"
                                                                             href="#" style="padding: 0;"><img
-                                style="width: 40px;height: 40px;" src="images/user-icon/default-avatar.png"></a>
+                                style="width: 40px;height: 40px;" src="images/user-icon/' . $_SESSION['avatarPath'] . '"></a>
                     <div class="dropdown-menu"><a class="dropdown-item" href="#">Notifications<img
                                     style="width: 20px;height: 20px;padding: 5px;background: url(&quot;1024px-Cercle_rouge_100%.svg.png&quot;);"
-                                    src="public/images/notification.jpg"></a><a class="dropdown-item" href="#">Mes
+                                    src="public/images/notification.jpg"></a><a class="dropdown-item" href="index.php?controller=client&action=posts&idClient='.$_SESSION['id'].'">Mes
                             posts</a>
-                        <a class="dropdown-item" href="#"
-                           style="color: rgb(141,26,26);font-style: normal;font-family: 'Open Sans', sans-serif;"><strong>Se
+                        <a class="dropdown-item" href="index.php?controller=entry&action=logout"
+                           style="color: rgb(141,26,26);font-style: normal;font-family: \'Open Sans\', sans-serif;"><strong>Se
                                 déconnecter</strong></a>
                     </div>
-                </li>
+                </li>';
+                }
+                ?>
             </ul>
         </div>
     </div>
@@ -74,6 +78,11 @@
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/bootstrap/js/bootstrap.min.js"></script>
 <script src="assets/js/clean-blog.js"></script>
+<?php
+if (isset($script)){
+    echo $script;
+}
+?>
 </body>
 
 </html>

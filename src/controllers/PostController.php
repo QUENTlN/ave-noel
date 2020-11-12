@@ -17,10 +17,11 @@ class PostController
         require_once('../src/views/post/post.php');
     }
 
-    public function create(){
-        if (isset($_POST['idPost'])){
+    public function create()
+    {
+        if (isset($_POST['idPost'])) {
             $post = new Post();
-            $post->setIdClient($_POST['idClient']);
+            $post->setIdClient($_SESSION['id']);
             $post->setContent($_POST['content']);
             $post->setTitle($_POST['title']);
             $post->setSubject($_POST['subject']);
@@ -30,27 +31,33 @@ class PostController
         header('Location: index.php');
     }
 
-    public function update(){
+    public function update()
+    {
         if (isset($_POST['idPost'])) {
-            $post = new Post();
-            $post->setId($_POST['idPost']);
-            $post->setContent($_POST['content']);
-            $post->setTitle($_POST['title']);
-            $post->setSubject($_POST['subject']);
-            $post->setUpdatedAt(date('Y-m-d H:i:s'));
-            PostRepository::update($post);
+            if (isset($_SESSION['session_validity']) && ($_SESSION['isAdmin'] || PostRepository::isTheAuthor($_SESSION['id'], $_POST['idPost']))) {
+                $post = new Post();
+                $post->setId($_POST['idPost']);
+                $post->setContent($_POST['content']);
+                $post->setTitle($_POST['title']);
+                $post->setSubject($_POST['subject']);
+                $post->setUpdatedAt(date('Y-m-d H:i:s'));
+                PostRepository::update($post);
+            }
             header('Location: index.php?controller=post&post=' . $post->getId());
-        }else{
+        } else {
             header('Location: index.php');
         }
     }
 
-    public function delete(){
+    public function delete()
+    {
         if (isset($_POST['idPost'])) {
-            $post = new Post();
-            $post->setId($_POST['idPost']);
-            $post->setDeletedAt(date('Y-m-d H:i:s'));
-            PostRepository::delete($post);
+            if (isset($_SESSION['session_validity']) && ($_SESSION['isAdmin'] || PostRepository::isTheAuthor($_SESSION['id'], $_POST['idPost']))) {
+                $post = new Post();
+                $post->setId($_POST['idPost']);
+                $post->setDeletedAt(date('Y-m-d H:i:s'));
+                PostRepository::delete($post);
+            }
         }
         header('Location: index.php');
     }

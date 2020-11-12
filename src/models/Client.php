@@ -12,7 +12,9 @@ class Client
     private $password;
     private $avatarPath;
     private $isAdmin;
+    private $isWriter;
     private $lastConnectionAt;
+    private $isFollowingNewsletter;
 
     /**
      * @return mixed
@@ -161,6 +163,24 @@ class Client
     /**
      * @return mixed
      */
+    public function getIsWriter()
+    {
+        return $this->isWriter;
+    }
+
+    /**
+     * @param mixed $isWriter
+     * @return Client
+     */
+    public function setIsWriter($isWriter)
+    {
+        $this->isWriter = $isWriter;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
     public function getLastConnectionAt()
     {
         return $this->lastConnectionAt;
@@ -173,6 +193,24 @@ class Client
     public function setLastConnectionAt($lastConnectionAt)
     {
         $this->lastConnectionAt = $lastConnectionAt;
+        return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getIsFollowingNewsletter()
+    {
+        return $this->isFollowingNewsletter;
+    }
+
+    /**
+     * @param mixed $isFollowingNewsletter
+     * @return Client
+     */
+    public function setIsFollowingNewsletter($isFollowingNewsletter)
+    {
+        $this->isFollowingNewsletter = $isFollowingNewsletter;
         return $this;
     }
 

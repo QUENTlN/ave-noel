@@ -1,8 +1,8 @@
 <?php
-
 require_once "../vendor/autoload.php";
 
+session_start();
 
-$router = new Core\Router();
+$router = new App\config\Router();
 $router->call();
 

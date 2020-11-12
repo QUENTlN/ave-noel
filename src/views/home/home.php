@@ -14,10 +14,14 @@
 <div class="container">
     <div class="row">
         <div class="col-md-10 col-lg-8 offset-md-0">
-            <div class="text-center mb-5" style="margin-bottom: 20px;">
+            <?php
+            if (isset($_SESSION['session_validity']) && ($_SESSION['isAdmin'] == true || $_SESSION['isWriter'])){
+                echo '<div class="text-center mb-5" style="margin-bottom: 20px;">
                 <button class="btn btn-primary" type="button" data-toggle="modal" data-target="#modalPostCreation">
                     Nouveau Post&nbsp;&nbsp;<i class="fa fa-plus-circle"></i></button>
-            </div>
+            </div>';
+            }
+            ?>
             <div class="modal fade" role="dialog" tabindex="-1" id="modalPostCreation">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">

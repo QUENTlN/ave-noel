@@ -19,7 +19,11 @@
         <div class="container">
             <div class="row" style="border-width: 1px;border-color: #212529;">
                 <div class="col-md-10 col-lg-8 mx-auto">
-                    <div>
+
+                    <?php
+                    if (isset($_SESSION['session_validity']) && ($_SESSION['isAdmin'] || ($_SESSION['id'] == $post->getIdClient()))) {
+
+                        echo '<div>
                         <button class="btn btn-primary" type="button" data-toggle="modal"
                                 data-target="#modalUpdatePost"> Modifier &nbsp;&nbsp;<i class="fa fa-pencil"></i>
                         </button>
@@ -37,7 +41,7 @@
                                                                                                 class="form-control-plaintext form-control"
                                                                                                 type="text"
                                                                                                 plaveholder="Titre"
-                                                                                                value="<?= $post->getTitle() ?>"
+                                                                                                value="' . $post->getTitle() . '"
                                                                                                 style="background: rgb(255,255,255);border: 1px solid #cbcbcb;font-family: Lora, serif;text-align: left;padding: 0px 5px;color: rgb(79,85,91);">
                                             </div>
                                             <div
@@ -45,12 +49,12 @@
                                                                                                    type="text"
                                                                                                    class="col-12 form-control"
                                                                                                    placeholder="Sur quel sujet porte le Post"
-                                                                                                   value="<?= $post->getSubject() ?>">
+                                                                                                   value="' . $post->getSubject() . '">
                                             </div>
                                             <div class="form-group"><label> Texte</label><textarea name="content"
                                                                                                    class="col-12 form-control"
                                                                                                    placeholder="Taper le texte du post"
-                                                                                                   style="font-size: 16px;height: 15em;"><?= $post->getContent() ?></textarea>
+                                                                                                   style="font-size: 16px;height: 15em;">' . $post->getContent() . '</textarea>
                                             </div>
                                             <input name="idPost" type="hidden" value="<?= $post->getId() ?>" readonly>
                                         </div>
@@ -77,17 +81,19 @@
                                     <div class="modal-footer">
                                         <button class="btn btn-light" type="button" data-dismiss="modal"> NON</button>
                                         <form action="index.php?controller=post&action=delete" method="post">
-                                            <input name="idPost" type="hidden" readonly value="<?= $post->getId() ?>">
+                                            <input name="idPost" type="hidden" readonly value="' . $post->getId() . '">
                                             <button class="btn btn-primary" type="submit"> OUI</button>
                                         </form>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div>';
+                    }
+                    ?>
                     <p><?= $post->getContent() ?><br></p>
                     <p><span> Posté par </span><a
-                                href="#"><?= $post->getUsername() ?></a><span>, le <?= $post->getCreatedAt() ?> </span>.
+                                href="index.php?controller=client&action=posts&idClient=<?= $post->getIdClient() ?>"><?= $post->getUsername() ?></a><span>, le <?= $post->getCreatedAt() ?> </span>.
                     </p>
                     <hr>
                     <div style="padding: 0px 30px;">
@@ -96,21 +102,25 @@
 
                                 <div class="row"
                                      style="background: rgba(0,0,0,0.03);padding: 20px;margin-bottom: 20px;">
-                                    <div class="col col-sm-12 p-0">
-                                        <div class="row col-12 p-0 m-0">
-                                            <div class="col p-0">
-                                                <div class="float-right">
+                                    <?php
+                                    if (isset($_SESSION['session_validity']) && ($_SESSION['isAdmin'] || ($_SESSION['id'] == $comment->getIdClient()))) {
+                                        echo '<div class="col col-sm-12 p-0">
+                                    <div class="row col-12 p-0 m-0">
+                                        <div class="col p-0">
+                                            <div class="float-right">
                                             <span>
                                                 <i class="fa fa-edit" data-toggle="modal"
-                                                   data-target="#modalUpdateComment"
+                                                   data-target="#modalUpdateComment' . $comment->getId() . '"
                                                    style="margin-right: 10px;"></i>
                                                 <i class="fa fa-remove" data-toggle="modal"
-                                                   data-target="#modalDeleteComment"></i>
+                                                   data-target="#modalDeleteComment' . $comment->getId() . '"></i>
                                             </span>
-                                                </div>
                                             </div>
                                         </div>
                                     </div>
+                                </div>';
+                                    }
+                                    ?>
                                     <div class="col-12 col-md-2">
                                         <div class="row">
                                             <div class="col-12" style="text-align: center;">
@@ -130,13 +140,15 @@
                                         <div class="row">
                                             <div class="col">
                                                 <div style="border-width: 1px;border-color: rgba(33,37,41,0.3);border-top-style: solid;">
-                                                    <small class="col-12" style="color: rgba(33,37,41,0.78);">Postée le&nbsp;<?= $comment->getCreatedAt() ?><?php if ($comment->getUpdatedAt() != null) {
+                                                    <small class="col-12" style="color: rgba(33,37,41,0.78);">Postée
+                                                        le&nbsp;<?= $comment->getCreatedAt() ?><?php if ($comment->getUpdatedAt() != null) {
                                                             echo(' (modifier)');
                                                         } ?></small>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="modal fade" role="dialog" tabindex="-1" id="modalUpdateComment">
+                                        <div class="modal fade" role="dialog" tabindex="-1"
+                                             id="modalUpdateComment'.$comment->getId().'">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
@@ -160,69 +172,77 @@
                                                                     data-dismiss="modal">
                                                                 fermer
                                                             </button>
-                                                            <button class="btn btn-primary" type="submit">enregistrer
+                                                            <button class="btn btn-primary" type="submit">
+                                                                enregistrer
                                                             </button>
                                                         </div>
                                                     </form>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="modal fade" role="dialog" tabindex="-1" id="modalDeleteComment">
-                                            <div class="modal-dialog" role="document">
-                                                <div class="modal-content">
-                                                    <div class="modal-header">
-                                                        <h4 class="modal-title" style="font-size: 23px;">Ê<strong>tes-vous
-                                                                sûr de vouloir supprimer</strong>&nbsp;?</h4>
-                                                        <button type="button" class="close" data-dismiss="modal"
-                                                                aria-label="Close"><span aria-hidden="true">×</span>
-                                                        </button>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                        <form action="index.php?controller=comment&action=delete"
-                                                              method="post">
-                                                            <button class="btn btn-light" type="button"
-                                                                    data-dismiss="modal">
-                                                                non
-                                                            </button>
-                                                            <input name="idComment" type="hidden"
-                                                                   value="<?= $comment->getId() ?>" readonly>
-                                                            <input name="idPost" type="hidden"
-                                                                   value="<?= $post->getId() ?>" readonly>
-                                                            <button class="btn btn-primary" type="submit">oui</button>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        <?php
+                                        if (isset($_SESSION['session_validity']) && ($_SESSION['isAdmin'] || ($_SESSION['id'] == $comment->getIdClient()))) {
+                                            echo '<div class="modal fade" role="dialog" tabindex="-1" id="modalDeleteComment' . $comment->getId() . '">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h4 class="modal-title" style="font-size: 23px;">Ê<strong>tes-vous
+                                                sûr de vouloir supprimer</strong>&nbsp;?</h4>
+                                        <button type="button" class="close" data-dismiss="modal"
+                                                aria-label="Close"><span aria-hidden="true">×</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <form action="index.php?controller=comment&action=delete"
+                                              method="post">
+                                            <button class="btn btn-light" type="button"
+                                                    data-dismiss="modal">
+                                                non
+                                            </button>
+                                            <input name="idComment" type="hidden"
+                                                   value="' . $comment->getId() . '" readonly>
+                                            <input name="idPost" type="hidden"
+                                                   value="' . $post->getId() . '" readonly>
+                                            <button class="btn btn-primary" type="submit">oui
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>';
+                                        }
+                                        ?>
                                     </div>
                                 </div>
                             <?php endforeach; ?>
                             <div>
-                                <div class="row" style="background: rgba(0,0,0,0.03);padding: 20px;">
+                                <?php
+                                if (isset($_SESSION['session_validity'])) {
+                                    echo '<div class="row" style="background: rgba(0,0,0,0.03);padding: 20px;">
                                     <div class="col">
-                                        <form action="index.php?controller=comment&action=create"
-                                              method="post">
+                                        <form method="post" action="index.php?controller=comment&action=create">
                                             <div class="form-row">
                                                 <div class="col" style="text-align: center;"><textarea
+                                                            id="contentNewComment"
                                                             class="form-control"
                                                             style="height: 100px;"
                                                             name="content"
                                                             placeholder="Tape ton message ici"></textarea>
                                                 </div>
-                                                <input name="idPost" type="hidden" readonly
-                                                       value="<?= $post->getId() ?>">
-                                                <input name="idClient" type="hidden" readonly value="1">
                                             </div>
                                             <div class="form-row">
                                                 <div class="col justify-content-end" style="text-align: center;">
-                                                    <button class="btn btn-primary" type="submit"
+                                                    <button class="btn btn-primary" type="submit" id="buttonSendNewComment"
                                                             style="margin-top: 15px;"> PUBLIER
                                                     </button>
                                                 </div>
                                             </div>
                                         </form>
                                     </div>
-                                </div>
+                                </div>';
+                                }
+                                ?>
+
                             </div>
                         </div>
                     </div>

@@ -1,14 +1,14 @@
 <?php
 
 
-namespace Core;
+namespace App\config;
 
 
 class Router
 {
     const CONTROLLERS = array(
         'home' => ['show'],
-        'entry' => ['login', 'register'],
+        'entry' => ['login', 'register', 'checkLogin', 'checkRegister', 'logout'],
         'contact' => ['show'],
         'post' => ['show', 'create', 'update', 'delete', 'user'],
         'comment' => ['create', 'update', 'delete'],
