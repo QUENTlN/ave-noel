@@ -1,4 +1,8 @@
-Pour se connecter : \n
-identifiant : quentin095.vaillant@gmail.com \n
-mdp : 123 \n
+Pour se connecter : 
+
+  - identifiant : quentin095.vaillant@gmail.com
+
+  - mdp : 123 
+
+
 utiliser la bdd fournie
